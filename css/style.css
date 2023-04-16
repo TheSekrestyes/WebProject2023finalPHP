@@ -1,0 +1,497 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Quicksand:wght@500&family=Tilt+Neon&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+/* menü */
+nav{
+    background-color: #38a838;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+/* dropdown menü (kutyáink) */
+.checkbtn{
+    font-size:50px;
+    color: white;
+    float: left;
+    margin-top: 8px;
+    margin-left: 20px;
+    cursor: pointer;
+    display: none;
+}
+/* telefonon megjelenő lenyíló menügomb*/
+#check{
+    display: none;
+}
+/* reszponzív lenyíló menü */
+@media (max-width: 1170px){
+    .checkbtn{
+        display:block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        background: #9EE493;
+        top: 80px;
+        text-align: center;
+        display: none;
+    }
+    #check:checked ~ ul{
+        display: block;
+    }
+}
+/* telefonon eltűnik a Boldog Blökik felirat */
+@media (max-width: 630px){
+    .cim{
+        display: none;
+    }
+}
+/*menü pontok dobozai*/
+nav ul{
+    float:left;
+    margin: 0;
+}
+/*menü pontok*/
+nav ul li{
+    display: block;
+    line-height: 80px;
+    height: 100%;
+    float:left;
+    line-height: 80px;
+}
+/*Boldog blökik felirat melletti ikon*/
+.icon{
+    float:right;
+    height: 60px;
+    margin: 8px 25px 0 0;
+}
+/*menü pontok szövege*/
+nav ul li a, .dropdown{
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    padding: 0 20px;
+}
+/*menü hovernél színváltás*/
+li:hover, li:hover a{
+    background: #2d882d;
+}
+/*jelenlegi html oldal menüpontja színváltás*/
+.active, .active a{
+    background: #2d882d;
+    color: lightgray;
+}
+/*Boldog Blökik felirat*/
+.cim{
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    float:right;
+    margin: 10px 20px 0 0;
+    font-family: 'Caveat', cursive;
+}
+/*kutyáink legördülő menü doboza*/
+.dropdown-content{
+    display: none;
+    color: white;
+    position: absolute;
+    left:107px;
+    background-color: #2d882d;
+    min-width:auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    float: none;
+}
+/*kutyáink legördülő menü szövege*/
+.dropdown-content a{
+    float:none;
+    color:white;
+    background-color: #38a838;
+    z-index: 999;
+}
+/*kutyáink legördülő menü hover*/
+.dropdown-content a:hover{
+    background-color: #2d882d;
+    color: #38a838;
+}
+/*kutyáink gomb hover*/
+.dropbtn:hover .dropdown-content{
+    display:block;
+}
+/*body háttér*/
+body{
+    background-image: url(../img/Háttér2.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position-x: center;
+    background-size: cover;
+    display: flex; 
+    flex-direction: column;
+}
+/*főtartalom szöveg doboza (örökbefogadás, rólunk)*/
+.tartalom{
+    position: relative;
+    top: 100px;
+    padding-bottom: 30px;
+    left:21%;
+    width:58%;
+    z-index: 1;
+    text-align: justify;
+}
+/*footer elérhetőségek doboza*/
+footer{
+    background-color: #38a838;
+    position:fixed;
+    bottom: 0px;
+    width: 100%;   
+    z-index: 999;
+    box-shadow: 0 -8px 16px 0px rgba(0,0,0,0.2);
+}
+/*elérhetőségek szöveg*/
+.elerhetosegek{
+    font-size: 1em;
+    line-height: 25px;
+    text-align: center;
+    color: white;
+}
+/*főtartalom szövege*/
+p{
+    text-align: justify;
+    font-size:135%;
+    letter-spacing:0.07em;
+    line-height: 140%;
+}
+/*űrlap elemek*/
+input[type=email],input[type=password],input[type=text],select{
+    width: 50%;
+    padding: 12px 20px;
+    margin: 10px 10px 10px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+    font-family:"Comfortaa",sans-serif; 
+}
+/*űrlap reset (nincs használva)*/
+input[type=reset]{
+    width:5rem;
+    max-width:100%;
+    background-color: #2d882d;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px auto;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family:"Comfortaa",sans-serif;
+    position:absolute;
+    bottom:0;
+    right:10px;
+}
+/*űrlap reset hover (nincs használva)*/
+input[type=reset]:hover {
+    background-color: #a07536;
+}
+/*bejelentkezés gomb*/
+input[type=submit]{
+    width:8rem;
+    max-width:100%;
+    background-color: #38a838;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family:"Comfortaa",sans-serif;
+}
+/*bejelentkezés gomb hover*/
+input[type=submit]:hover {
+    background-color: #2d882d;
+}
+/*űrlap doboz*/
+.form{
+    color: black;
+    border-radius: 10px;
+    position: relative;
+    padding: 2vh 2vh;
+    margin: auto;
+    border: solid #2d882d 2px;
+    width: 50%;
+    text-align: center;
+    margin-bottom: 5%;
+    font-size: 2.5vh;
+    margin-top: 8%;
+}
+/*űrlap regisztráció, bejelentkezés közti váltó gomb*/
+.register, .register a{
+    font-size: 2vh;
+    text-align: right;
+    text-decoration: none;
+    color: black;
+}
+/*regisztráció hover*/
+.register a:hover{
+    color: #2d882d;
+}
+
+/*kutyás kártyák legnagyobb doboza*/
+.dog-container{
+    display:block;
+}
+/*kezdőlap táblázatos elrendezés*/
+.row{
+    margin-top: 6vw;
+    text-align: center;
+}
+/*kutyás kártyákon táblázat doboza*/
+.table{
+    font-size: 1.5em;
+}
+/*kutyás kártyák háttere*/
+.card{
+    border-radius: 15px;
+    position:relative;
+    width: 21.875em;
+    height: 28.125em;
+    margin: 10px 0;
+    cursor:pointer;
+    background-size: cover;
+    background-position: 50%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+/*kutyás kártyák tartalma hover*/
+.card-content:hover{
+    transition: backdrop-filter, font-size 600ms ease;
+    backdrop-filter: blur(15px);
+    font-size:1em;
+    border-radius: 15px;
+}
+/*kutyás kártyák tartalma*/
+.card-content{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color:white;
+    font-size:0;
+}
+/*1.kutyás kártya háttere*/
+.card-1{
+    background-image:url('../img/ivanov.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top:100px;
+}
+/*2.kutyás kártya háttere*/
+.card-2{
+    background-image:url('../img/mirabella.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 10%;
+}
+/*3.kutyás kártya háttere*/
+.card-3{
+    background-image:url('../img/Cedrus.jpg');
+    background-repeat: no-repeat;
+    background-size: 120%;
+}
+/*4.kutyás kártya háttere*/
+.card-4{
+    background-image:url('../img/Kelly.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 40px;
+}
+/*5. kutyás kártya háttere (gazdira talált)*/
+.card-5{
+    background-image:url('../img/Kamelia.jpg');
+    background-repeat: no-repeat;
+    background-size: 120%;
+    margin-top:100px;
+}
+/*6. kutyás kártya háttere (gazdira talált)*/
+.card-6{
+    background-image:url('../img/Piskóta.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 40px;
+}
+/*kezdőlap szövegdobozok*/
+.news{
+    background-color: #9EE493;
+    border-radius: 15px;
+    position:relative;
+    width: 25em;
+    height: 28em;
+    display:inline-block;
+    margin-right: 1vw;
+    background-size: cover;
+    background-position: 50%;
+}
+/*kezdőlap szövegdobozok hover*/
+.news:hover{
+    transition: transform 600ms;
+    transform: scale(1.025);
+    background-color: #DAF7DC;
+}
+/*kezdőlap szövegdobozok szövege*/
+.news-content{
+    font-size: 1.5em;
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:black;
+    margin: 5%;
+}
+/*örökbefogadasrol/rolunk szövegdobozok tartalma*/
+.szoveg{
+    background-color: #9EE493;
+    border-radius: 10px;
+    padding: 10px 10px;
+    margin: 10px 10px;
+}
+/*örökbefogadasrol/rolunk szövegdobozok tartalma hover*/
+.szoveg:hover{
+    transition: transform 600ms;
+    transform: scale(1.075);
+    background-color: #DAF7DC;
+}
+/*kezdőlap üdvözlés*/
+.title{
+    margin: 15vh 20vh;
+    margin-bottom: 5vh;
+    font-size: 2em;
+}
+#titleH2{
+    text-align: left;
+    margin-top: 5vh;
+    font-size: 3em;
+    margin-bottom: 5vh;
+}
+/*kezdőlap doboza*/
+.content{
+    padding-bottom: 10vh;
+}
+/*kezdőlap kép slider*/
+#slider {
+	overflow: hidden;
+    max-width: 60%;
+    max-height: 50vh;
+    position: relative;
+    margin: auto;
+    border-radius: 15px;
+}
+/*kezdőlap kép slider hover*/
+#slider:hover{
+    transition: transform 600ms;
+    transform: scale(1.050);
+}
+/*kezdőlap kép slider animáció*/
+@keyframes slider {
+	0% { left: 0; }
+	30% { left: 0; }
+	33% { left: -100%; }
+	63% { left: -100%; }
+	66% { left: -200%; }
+	95% { left: -200%; }
+	100% { left: 0; }
+}
+/*kezdőlap kép slider doboza*/
+#slider figure {
+	width: 300%;
+	position: relative;
+	animation: 9s slider infinite;
+}
+/*kezdőlap kép slider képei*/
+#slider figure img {
+	width: 33.3333333%;
+	height : 100%;
+	float: left;
+}
+
+/*kutyás oldal nyomtatás*/
+#nyomtatasJog{
+    font-size: 1.8em;
+    color: red;
+    position:absolute;
+    top: 50%;
+    display: none;
+}
+/*nyomtatás*/
+@media print{
+    p { font-size: 9pt; }
+    nav, footer{ box-shadow: none;}
+    .elerhetosegek{
+        color:black;
+    }
+    #szoveg:nth-child(6){ page-break-after: always;}
+    .dog-container{
+        display: none;
+    }
+    #nyomtatasJog{
+        display: block;
+    }
+}
+
+video{
+    max-width: 75%;
+    max-height: 50vh;
+    position: relative;
+    left: 10%;
+    padding: 0;
+    margin: 0;
+}
+
+.result{
+    color: black;
+    border-radius: 10px;
+    position: relative;
+    padding: 2vh 2vh;
+    margin: auto;
+    border: solid #2d882d 2px;
+    width: 50%;
+    text-align: center;
+    font-size: 2.5vh;
+    margin-top: 10%;
+}
+
+.profileTable{
+    font-size: 1.5vw;
+    margin: auto;
+    text-align: left;
+}
+.profileTable td{
+    text-align: right;
+}
+.profileBtn{
+    margin-top: 2%;
+    margin: auto;
+    
+}
+.profileBtn input[type="submit"]{
+    width: 28%;
+    font-size: 1vw;
+}
+.edit{
+    min-width: 100%;
+    font-size: 1vw;
+}
